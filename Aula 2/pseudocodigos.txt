@@ -1,0 +1,18 @@
+Início
+LER idade
+SE idade >= 18
+ESCREVER "Você é maior de idade"
+SENÃO
+ESCREVER "Você não é maior de idade"
+Fim
+
+###############################################################################################################################################################################################################################################################################################
+
+Início
+contador = 1
+soma = 0
+ENQUANTO contador < 11
+soma = soma + contador
+contador = contador + 1
+FIM ENQUANTO
+Fim
