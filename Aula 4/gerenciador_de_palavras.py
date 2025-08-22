@@ -16,16 +16,20 @@ def mostrar_palavras(palavras):
 
 for palavra in lista_palavras:
     print(palavra.capitalize())
+    comum = True
     if palavra[0].lower() == 'a':
         print(' começa com a letra "a".')
         a_palavras.append(palavra)
-    if palavra == palavra[::-1]:
-        print(' é um palíndromo.')
-        palindromos.append(palavra)
+        comum = False
     if len(palavra) > 7:
         print(' é uma palavra longa.')
         longas.append(palavra)
-    else:
+        comum = False
+    if palavra == palavra[::-1]:
+        print(' é um palíndromo.')
+        palindromos.append(palavra)
+        comum = False
+    if comum:
         print(' é uma palavra comum.')
         comuns.append(palavra)
 
