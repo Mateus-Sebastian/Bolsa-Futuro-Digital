@@ -7,9 +7,9 @@ comuns = []
 
 def mostrar_palavras(palavras):
     for palavra in palavras:
-        if palavra != palavras[-1] and palavra != palavras[-2]:
+        if len(palavras) > 2 and palavra != palavras[-1] and palavra != palavras[-2]:
             print(palavra, end=', ')
-        if palavra == palavras[-2]:
+        if len(palavras) > 1 and palavra == palavras[-2]:
             print(palavra + ' e ', end='')
         if palavra == palavras[-1]:
             print(palavra + '.', end='')
@@ -23,7 +23,7 @@ for palavra in lista_palavras:
         print(' é um palíndromo.')
         palindromos.append(palavra)
     if len(palavra) > 7:
-        print('é uma palavra longa.')
+        print(' é uma palavra longa.')
         longas.append(palavra)
     else:
         print(' é uma palavra comum.')
