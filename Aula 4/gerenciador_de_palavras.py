@@ -4,6 +4,7 @@ a_palavras = []
 palindromos = []
 longas = []
 comuns = []
+mensagem = []
 
 def mostrar_palavras(palavras):
     for palavra in palavras:
@@ -12,32 +13,34 @@ def mostrar_palavras(palavras):
         if len(palavras) > 1 and palavra == palavras[-2]:
             print(palavra + ' e ', end='')
         if palavra == palavras[-1]:
-            print(palavra + '.', end='')
+            print(palavra + '.')
 
 for palavra in lista_palavras:
-    print(palavra.capitalize())
+    print(palavra.capitalize(), end=' ')
     comum = True
     if palavra[0].lower() == 'a':
-        print(' começa com a letra "a".')
+        mensagem.append('começa com a letra "a"')
         a_palavras.append(palavra)
         comum = False
     if len(palavra) > 7:
-        print(' é uma palavra longa.')
+        mensagem.append('é uma palavra longa')
         longas.append(palavra)
         comum = False
     if palavra == palavra[::-1]:
-        print(' é um palíndromo.')
+        mensagem.append('é um palíndromo')
         palindromos.append(palavra)
         comum = False
     if comum:
-        print(' é uma palavra comum.')
+        mensagem.append('é uma palavra comum')
         comuns.append(palavra)
+    mostrar_palavras(mensagem)
+    mensagem.clear()
 
-print(f"\n{len(a_palavras)} palavra(s) que começam com 'a':", end=' ')
+print(f"\nResumo:\n{len(a_palavras)} palavra(s) que começam com 'a':", end=' ')
 mostrar_palavras(a_palavras)
-print(f"\n{len(palindromos)} palíndromo(s):", end=' ')
+print(f"{len(palindromos)} palíndromo(s):", end=' ')
 mostrar_palavras(palindromos)
-print(f"\n{len(longas)} palavra(s) longa(s):", end=' ')
+print(f"{len(longas)} palavra(s) longa(s):", end=' ')
 mostrar_palavras(longas)
-print(f"\n{len(comuns)} palavra(s) comum(ns):", end=' ')
+print(f"{len(comuns)} palavra(s) comum(ns):", end=' ')
 mostrar_palavras(comuns)
