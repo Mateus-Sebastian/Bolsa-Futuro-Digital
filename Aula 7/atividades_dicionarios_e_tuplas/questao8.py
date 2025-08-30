@@ -8,9 +8,7 @@ coordenadas = (input("Digite as coordenadas (latitude, longitude): ").split(',')
 
 for i in range(len(coordenadas)):
     coordenadas[i] = float(coordenadas[i])
-
-print(coordenadas)
-
+    
 for i in pontos_turisticos.keys():
     if coordenadas == list(i):
         print(f'Ponto turístico: {pontos_turisticos[i]}')
