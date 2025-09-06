@@ -6,5 +6,5 @@ def bubble_sort(lista):
                 lista[j], lista[j+1] = lista[j+1], lista[j]
     return lista
 
-valores = [64, 34, 25, 12, 22, 11, 90]
+valores = [64, 34, 25, 12, 22, 13, 90]
 print(bubble_sort(valores))
